@@ -51,7 +51,7 @@ def upload(bucket, file, key):
     logger.info('Multipart upload of {} to s3://{} complete'.format(file, bucket))
 
 
-def main(argv):
+def main():
     parser = argparse.ArgumentParser(description='Multipart upload parser example')
     parser.add_argument('--bucket', action="store", required=True)
     parser.add_argument('--file', action="store", required=True)
@@ -62,4 +62,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    main(sys.argv)
+    main()
