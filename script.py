@@ -5,7 +5,6 @@ import boto3
 import logging
 import math
 import os
-import sys
 
 from filechunkio import FileChunkIO
 
