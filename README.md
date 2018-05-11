@@ -2,9 +2,11 @@
 
 This is an example of how to perform [S3 Multipart Upload](https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html) with Python. The procedure is as follows:
 
-1. Inform S3 that a multipart upload is incoming with `create_multipart_upload`
+1. Inform S3 that a multipart upload is incoming with `create_multipart_upload`.
 2. Select a part_size (e.g. 6 MiB) and perform separate `upload_part` operations of a large file. This is done sequentially in this example, but at scale this should be parallelized.
 3. Inform S3 that the upload is complete via `complete_multipart_upload`. S3 will assemble the parts into a single S3 object.
+
+Note that incomplete multipart uploads incur storage costs; this can be minimized with a [lifecycle policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config).
 
 
 ## Dependencies
